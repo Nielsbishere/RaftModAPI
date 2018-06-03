@@ -3,7 +3,7 @@ This is a modding API for Raft, which will support at least Items and Blocks. Fo
 ## Dependencies
 Before you can use this, you have to [buy Raft](https://store.steampowered.com/app/648800/Raft/) and look through their [modding guidelines](http://raft-game.com/modding-guidelines.html) and make sure you know at least a basic programming language, so you can start working on your mod. You also need to have [dnSpy](https://github.com/0xd4d/dnSpy), so you can inspect the C# assembly from the dll. Other than that; assets are exported through [Unity](https://unity3d.com/get-unity/download), so if you want any sprites, models or audio, you'll have to install that as well.
 ## Setting up a modding folder
-First, I suggest you set up a modding folder, with all Raft's game files (taken from steamapps/common/Raft in the Steam programs root). This is because you have to work into the Assembly-CSharp.dll file inside Raft_Data/Managed; meaning that if you make (really bad) mistakes, you can mess up your entire game (But don't worry, it should be fine, as long as you stay to the modding API).
+First, I suggest you set up a modding folder, with all Raft's game files (taken from steamapps/common/Raft in the Steam programs root). This is because your game could be updated and/or changed while you are modding, which could remove the modding API and because having a backup for modding is good practice (for if it crashes).
 ## Setting up a Mod class
 If you open up dnSpy, you should be able to go to Edit / Create Assembly in the toolbar and you can configure that as following:  
 ![Screenshot](https://i.imgur.com/gCX0O1Y.png)
