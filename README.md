@@ -14,33 +14,25 @@ Now you need to import the modloader, which you can do by getting the [modding d
 using System;
 using UnityEngine;
 
-public class Main : Mod
+// Token: 0x02000007 RID: 7
+public class Mod_ModdingAPI : Mod
 {
-
-  //Set up the Mod base class
-  //Prefer to use Start() over the constructor
-  //Only use constructor for setting up basic values
-	public Main(): base("Modding API", "An API for raft modding"){
-
-	}
-
-  //Initialize all mod items, blocks, etc.
+	// Token: 0x06000089 RID: 137
 	private void Start()
 	{
-		RConsole.Log("Mod loaded!");
-		AssetBundle items = AssetBundle.LoadFromFile("Assets/AssetBundles/raftmod_items");
-		if (items == null)
+		AssetBundle assetBundle = AssetBundle.LoadFromFile("Assets/AssetBundles/raftmod_items");
+		if (assetBundle == null)
 		{
 			RConsole.Log("Couldn't find the asset bundle");
 			return;
 		}
-		Sprite garbageIcon = items.LoadAsset<Sprite>("garbage");
+		Sprite icon = assetBundle.LoadAsset<Sprite>("garbage");
 		this.garbage = new ModItem(ItemType.Inventory, "Garbage", "It's just garbage");
-		this.garbage.SetIcon(garbageIcon);
+		this.garbage.SetIcon(icon);
 		ModHelper.AddItem(this, this.garbage);
 	}
 
-	//Allow the player to give itself garbage
+	// Token: 0x0600008A RID: 138
 	public void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.F1))
@@ -48,13 +40,13 @@ public class Main : Mod
 			ModHelper.GiveItem(this.garbage.itemInstance, 1, null);
 		}
 	}
-	
-  //Register the mod (will probably be removed in the future)
-	public static Main loadMod(GameObject host)
+
+	// Token: 0x0600008B RID: 139
+	public Mod_ModdingAPI() : base("Modding API", "The main API for modding", "v0.0.1", "1.01b")
 	{
-		return host.AddComponent<Main>();
 	}
 
+	// Token: 0x0400002C RID: 44
 	private ModItem garbage;
 }
 ```
