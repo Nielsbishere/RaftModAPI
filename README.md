@@ -54,15 +54,15 @@ As you can see from the source, we are getting the AssetBundle 'raftmod_items' a
 ### Exporting assets
 First, you should create a Unity project and go to the assets folder in which you put the sprites, models, etc. you need.
 #### Sprites
-![Assets](https://i.imgur.com/7V2oYBW.png)
-Go to Texture Type and change it to 'Sprite (2D and UI)'.
-![TextureType](https://i.imgur.com/6dACy7y.png)
-Then go to the bottom left and select 'AssetBundle'. I already have an asset bundle, but you should create a custom one. This asset bundle is what you're going to load into your mod, to support assets.
-![AssetBundle](https://i.imgur.com/qEfopkw.png)
-Then, head to the toolbar and select 'Assets', go down to Build AssetBundles and click it.
-![BuildAssetBundles](https://i.imgur.com/ywNlKfo.png)
-Now, there should be a file with the name you entered as the AssetBundle in the Assets\AssetBundles folder. This file you need to put into the Assets\AssetBundles folder next to the Raft.exe
-![The two directories](https://i.imgur.com/5wpJgOY.png)
+![Assets](https://i.imgur.com/7V2oYBW.png)  
+Go to Texture Type and change it to 'Sprite (2D and UI)'.  
+![TextureType](https://i.imgur.com/6dACy7y.png)  
+Then go to the bottom left and select 'AssetBundle'. I already have an asset bundle, but you should create a custom one. This asset bundle is what you're going to load into your mod, to support assets.  
+![AssetBundle](https://i.imgur.com/qEfopkw.png)  
+Then, head to the toolbar and select 'Assets', go down to Build AssetBundles and click it.  
+![BuildAssetBundles](https://i.imgur.com/ywNlKfo.png)  
+Now, there should be a file with the name you entered as the AssetBundle in the Assets\AssetBundles folder. This file you need to put into the Assets\AssetBundles folder next to the Raft.exe  
+![The two directories](https://i.imgur.com/5wpJgOY.png)  
 Above you can see the Unity project's Assets and the Assets next to raft. You'll need to copy them in order to use them.
 ### Importing assets
 ```cs
